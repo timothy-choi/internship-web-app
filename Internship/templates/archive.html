@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Page-6.css') }}" media="screen">
+    <div class="aligned">
+        <img src="{{ url_for('static', filename='images/catbus.png') }}" width="75" alt="">
+        <span>Catbus Internship List</span>
+    </div>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="/about/">About</a>
+        <a class="active" href="/archive/">Archive</a>
+    </div>
+    <body>
+        <h2>Internship Archive</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Company</th>
+                <th>Position</th>
+                <th>Salary ($/hr) </th>
+                <th>Post Time</th>
+                <th>Close Time</th>
+            </tr>
+            {% for item in archive %}
+                <tr>
+                    <td>{{ item.cname }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.salary }}</td>
+                    <td>{{ item.postdate }}</td>
+                    <td>{{ item.closedate }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

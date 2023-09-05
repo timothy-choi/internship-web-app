@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Internship Ratings and Reviews</h2>
+    <table style="width:100%">
+        <h4>Average Rating: {{rating}}</h4>
+        <div>
+            <td>
+                <form action="/rating/delete/?target=/reviews/{{jid}}/" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="operation" value="delete"/>
+                <input type="hidden" name="ratingid" value="{{ r2 }}"/>
+                <input type="submit" name="delete" value="remove rating"/>
+                </form>
+            </td>
+        </div>
+        <tr>
+            <th>Reviews</th>
+            <th>Action</th>
+        </tr>
+        {% for i in job %}
+            <tr>
+                <td>{{i.content}}</td>
+                {% if i.user == session['username'] %}
+                    <td>
+                        <form action="/review/delete/?target=/reviews/{{jid}}/" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="operation" value="delete"/>
+                        <input type="hidden" name="reviewid" value="{{ i.reviewid }}"/>
+                        <input type="submit" name="delete" value="delete this review"/>
+                        </form>
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    <h5>Submit reviews and ratings here</h5>
+    <form action="/rating/create/{{jid}}/" method="post" enctype="multipart/form-data">                
+        <input type="hidden" name="operation" value="create"/>
+        <p>Rating (1-10):</p>
+        <input type="text" name="rate" required/>
+        <input type="submit" name="submit" value="Submit"/>
+    </form>
+    <form action="/review/add/{{jid}}/" method="post" enctype="multipart/form-data">                
+        <input type="hidden" name="operation" value="create"/>
+        <p>Review:</p>
+        <input type="text" name="review" required/>
+        <input type="submit" name="submit" value="Submit"/>
+    </form>
+{% endblock %}

@@ -1,0 +1,77 @@
+.multiselect {
+    width: 200px;
+}
+
+.selectBox {
+    position: relative;
+}
+
+.selectBox select {
+    width: 100%;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#mySelectOptions {
+    display: none;
+    border: 0.5px #7c7c7c solid;
+    background-color: white;
+    color: black;
+    max-height: 150px;
+    overflow-y: scroll;
+
+}
+
+#mySelectOptions label {
+    display: block;
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    background-color: #ffffff00;
+    padding: 0 2.25rem 0 .75rem;
+    /* padding: .375rem 2.25rem .375rem .75rem; */
+}
+
+#mySelectOptions label:hover {
+    background-color: #1e90ff;
+}
+.sidebox {
+     /* Full-height: remove this if you want "auto" height */
+    width: 200px; /* Set the width of the sidebar */
+    z-index: 1; /* Stay on top */
+}
+
+/* The navigation menu links */
+.sidebox a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebox a:hover {
+    color: #f1f1f1;
+
+}
+
+#parent {
+    display:flex;
+}
+#sec1 {
+    align-self:center;
+}
+
+#sec2 {
+    flex:1;
+
+}
+

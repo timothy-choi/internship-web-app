@@ -1,0 +1,155 @@
+<html style="font-size: 16px;" lang="en" class="u-responsive-xl"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Catbus Internship List</title>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='css/jquery-3.5.1.min.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='css/SearchBar.js') }}" defer=""></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" media="screen">
+    <style>
+    h2 {
+        white-space:nowrap;
+    }</style>
+
+</head>
+<body data-home-page="https://index.html?version=852f9b6f-a6dd-49a1-b531-5dc9a6ec787b" data-home-page-title="index" class="u-body u-xl-mode" data-lang="en">
+<!-- Side navigation -->
+<!--<div class="sidenav">
+    <img src="{{ url_for('static', filename='images/catbus.png') }}" width="600" height="300">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>-->
+
+    {% if 'username' in session %}
+    <form action="/accounts/logout/" method="post" enctype="multipart/form-data">
+        <input type="submit" name="logout" value="Logout"/>
+    </form>
+    {% else %}
+    <div id="login">
+        <a href="/accounts/login/">login</a>
+    </div>
+    {% endif %}
+
+    <div class="logo">
+        <img src="../static/images/catbus.png" width="200" alt="">
+        <span style="font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif; font-size: 20px">Catbus Internship List</span>
+    </div>
+
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/contact/">Contact</a>
+        <a href="/about/">About</a>
+        <a href="/archive/">Archive</a>
+    </div>
+
+    <section class="mainBody">
+
+        <div class="internshipTable">
+            <p style="font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif; font-size: 20px">Currently Available Internships</p>
+            <table class="bruhImtired" id="internships">
+                <colgroup>
+                    <col style = "width:20%">
+                    <col style = "width:20%">
+                    <col style = "width:20%">
+                    <col style = "width:20%">
+                    <col style = "width:20%">
+                </colgroup>
+                <thead >
+                <tr>
+                    <th>Company Name</th>
+                    <th>Role</th>
+                    <th>Description</th>
+                    <th>Salary ($)</th>
+                    <th>Requirements</th>
+                    <th>Link</th>
+                </tr>
+                </thead>
+                <tbody id = "list">
+                {% for post in posts %}
+                <tr style="border:solid;border-width:2px;border:black">
+                    <td >{{post.company}}</td>
+                    <td><a href="/reviews/{{post.jobid}}/">{{post.title}}</a></td>
+                    <td>{{post.description}}</td>
+                    <td>{{post.salary}}</td>
+                    <td>{{post.requirements}}</td>
+                    <td><a href=>{{post.link}}</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="sidebar">
+            <form class ="jobSearchBarContainer">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass"
+                     class="svg-inline--fa fa-magnifying-glass job-search-bar_magnifyingGlassIcon__MsoPM"
+                     role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                          d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3
+                                 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416
+                                 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z">
+                    </path>
+                </svg>
+                <input id="cb" type="text" class="searchBarBody"
+                       placeholder="Search by Role, Company, or Key Word">
+            </form>
+
+            <form class="emailBox">
+                <img src="../static/images/EnvelopeLogo.JPG" width="100px" class="envelopeImg">
+                <p class="mailingList">Mailing List</p>
+                <p class="mailingSubtext">Be the first to know when a new opportunity is available!</p>
+                <div class="mailContents">
+                    <input type="hidden" name="operation" value="create"/>
+
+                    <p class="mailContentText">Name:
+                        <input type="text" class="emailBarBody" name="text1" required/> </p>
+
+                    <p class="mailContentText">Email:
+                        <input type="text" class="emailBarBody" name="text2" required/> </p>
+
+
+                    <input type="submit" class="subscribeButton" name="subscribe" value="Subscribe"/>
+                </div>
+
+            </form>
+        </div>
+
+
+    </section>
+    <section class="submitBox">
+        <p style="font-family: Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; font-size:20px">Found an internship not listed? Submit it here!</p>
+        <form action="/internship/" method="post" enctype="multipart/form-data">
+            <table class="submitTable">
+                <input type="hidden" name="operation" value="create"/>
+
+                <td><a>Company:<input type="text" name="cname" required/> </a></td>
+
+                <td><a>Title: <input type="text" name="title" required/> </a></td>
+
+                <td><a>Description: <input type="text" name="jdesc" required/> </a></td>
+
+                <td><a>Location: <input type="text" name="loc" required/> </a> </td>
+
+                <td><a>Requirements: <input type="text" name="jreq" required/> </a></td>
+
+                <td><a>Link: <input type="text" name="link" required/> </a></td>
+
+                <td><a>Salary: <input type="text" name="salary"/></a></td>
+
+
+            </table>
+            <p></p>
+                <input type="submit" name="submit" value="Submit"/>
+        </form>
+
+    </section>
+
+
+
+</body>
+</html>
+
+
+
+
+<style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>

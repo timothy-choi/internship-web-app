@@ -1,0 +1,430 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+    width: 800px;
+    overflow: auto;
+    border: 3px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* make background blackish */
+
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #ccc;
+    width: 50%;
+    /* center the header */
+    position: relative;
+    left: 50%;
+    margin-top: 20px;
+    transform: translate(-50%, -50%);
+
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#logo img {
+    height: 100px;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* reduce the margin between the logo and title */
+    margin-top: 30px;
+
+    
+}
+
+#title h2 {
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#explore {
+    display: flex;
+    align-items: center;
+    /* position to the right */
+    position: absolute;
+    right: 120px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    /* position to the right */
+    position: absolute;
+    right: 40px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#explore a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 10px; /* reduce the margin between the explore and user elements */
+}
+
+#login a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 10px; /* reduce the margin between the explore and user elements */
+}
+
+#user {
+    display: flex;
+    align-items: center;
+        /* position to the right */
+    position: absolute;
+    right: 40px;
+    font-weight: bold;
+    margin-top: 30px;
+
+
+
+}
+
+#user a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#posts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.post {
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+}
+
+.user-details img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-details a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+}
+
+.timestamp a {
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.post-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-image img {
+    width: 100%;
+}
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.likes a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    /* add a cool box */
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    padding: 10px; 
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    margin-right: -100px;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    /* separate the comment from the rest of the comments */
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+
+}
+.comment a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px; 
+}
+
+.comment p {
+    /* modern saphire highlight for comment */
+    background-color: #0f52ba;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 70px;
+
+}
+
+/* add the content class styling */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content h2 {
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content p {
+    color: #999;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* make the content form cooler with the button being modern */
+.content form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content form input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* make button modern and responsive on hover and click */
+
+.content form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #0f52ba;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content form button:hover {
+    background-color: #fff;
+    color: #0f52ba;
+}
+
+.content form button:active {
+    background-color: #0f52ba;
+    color: #fff;
+}
+
+/* style the bottom class which includes the unlike button and comment form. Make sure the div bottom class goes below all the comments
+ */
+/* inside the footer class we have a top and buttom classes arrange them in a vertical manner */
+.post-footer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.bottom {
+    /* order inside divs as rows */
+    display: flex;
+    flex-direction: row;
+    /* put the div to the bottom of the footer div */
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.bottom a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    /* add a cool box */
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    padding: 10px; 
+}
+
+.bottom button {
+
+    margin-right: 120px;
+}
+
+.bottom form {
+    display: flex;
+    align-items: center;
+}
+
+.bottom form input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.bottom form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #0f52ba;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bottom form button:hover {
+    background-color: #fff;
+    color: #0f52ba;
+}
+
+.bottom form button:active {
+    background-color: #0f52ba;
+    color: #fff;
+}
+
+
+
+
+
+
+@media (max-width: 700px) {
+    #header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #logo {
+        margin-bottom: 10px;
+        text-align: left;
+        margin-left: -20px;
+        margin-top: 30px;
+    }
+
+    #title h2 {
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+
+    }
+
+    #explore, #user {
+        margin-top: 10px;
+        text-align: right;
+        margin-top: 20px;
+
+    }
+}

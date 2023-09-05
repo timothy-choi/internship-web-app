@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Catbus</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+        {% block user_stylesheet %}{% endblock %}
+    </head>
+    <body>
+<!-- header section -->
+    <div id="header">
+        <div id="logo">
+            <a href="/"><img src="{{ url_for('static', filename='images/catbus.png') }}" alt="logo"></a>
+        </div>
+        <div id="title">
+            <h2>Catbus</h2>
+        </div>
+        <div class="right">
+            {% if 'username' not in session %}
+                <div id="login">
+                    <a href="/accounts/login/">login</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

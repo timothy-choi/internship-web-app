@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content">
+        <form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
+            <input type="text" name="username" placeholder="username" required/> <br><br>
+            <input type="password" name="password" placeholder="password" required/> <br><br>
+            <input type="submit" name="signup" value="sign up"/> <br><br>
+            <input type="hidden" name="operation" value="create"/>
+        </form>
+        <a href="/accounts/login/">i already have an account</a>
+    </div>
+{% endblock %}

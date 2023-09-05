@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Filter And Search</title>
+  <!-- Google Font -->
+  <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+          rel="stylesheet"
+  />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../static/css/DataFilter.css" />
+</head>
+<body>
+<div class="wrapper">
+  <div id="search-container">
+    <input
+            type="search"
+            id="search-input"
+            placeholder="Search product name here.."
+    />
+    <button id="search">Search</button>
+  </div>
+  <div id="buttons">
+    <button class="button-value" onclick="filterProduct('all')">All</button>
+    <button class="button-value" onclick="filterProduct('Topwear')">
+      Topwear
+    </button>
+    <button class="button-value" onclick="filterProduct('Bottomwear')">
+      Bottomwear
+    </button>
+    <button class="button-value" onclick="filterProduct('Jacket')">
+      Jacket
+    </button>
+    <button class="button-value" onclick="filterProduct('Watch')">
+      Watch
+    </button>
+  </div>
+  <div id="products"></div>
+</div>
+<!-- Script -->
+<script src="../static/css/DataFilters.js"></script>
+</body>
+</html>
+
+
+
+
+<!--<div class="sidebox" id="sec1">
+                    /*<div class="container-fluid">
+                        <script src="{{ url_for('static', filename='css/dropdownjs.js') }}"></script>
+                        <link href="{{ url_for('static', filename='css/dropdown.css') }}" rel="stylesheet"/>
+                        <div class="form-group col-sm-8">
+                            <label for="myMultiselect">Filter Multiselect</label>
+                            <div id="myMultiselect" class="multiselect">
+                                <div id="mySelectLabel" class="selectBox" onclick="toggleCheckboxArea()">
+                                    <select class="form-select">
+                                        <option>somevalue</option>
+                                    </select>
+                                    <div class="overSelect"></div>
+                                </div>
+                                <div id="mySelectOptions">
+                                    <label for="one"><input type="checkbox" id="one" onchange="checkboxStatusChange()" value="one" /> First checkbox</label>
+                                    <label for="two"><input type="checkbox" id="two" onchange="checkboxStatusChange()" value="two" /> Second checkbox</label>
+                                    <label for="three"><input type="checkbox" id="three" onchange="checkboxStatusChange()" value="three" /> Third checkbox</label>
+                                    <label for="four"><input type="checkbox" id="four" onchange="checkboxStatusChange()" value="four" /> Third checkbox</label>
+                                    <label for="five"><input type="checkbox" id="five" onchange="checkboxStatusChange()" value="five" /> First checkbox</label>
+                                    <label for="six"><input type="checkbox" id="six" onchange="checkboxStatusChange()" value="six" /> Second checkbox</label>
+                                    <label for="seven"><input type="checkbox" id="seven" onchange="checkboxStatusChange()" value="seven" /> Third checkbox</label>
+                                    <label for="eight"><input type="checkbox" id="eight" onchange="checkboxStatusChange()" value="eight" /> First checkbox</label>
+                                    <label for="nine"><input type="checkbox" id="nine" onchange="checkboxStatusChange()" value="nine" /> Second checkbox</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="ten" /> Third checkbox</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+<!--<div class="wrapper">
+    <div id="search-container">
+        <input
+                type="search"
+                id="search-input"
+                placeholder="Search product name here.."
+        />
+        <button id="search">Search</button>
+    </div>
+    <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+        <button class="button-value" onclick="filterProduct('Topwear')">
+            Topwear
+        </button>
+        <button class="button-value" onclick="filterProduct('Bottomwear')">
+            Bottomwear
+        </button>
+        <button class="button-value" onclick="filterProduct('Jacket')">
+            Jacket
+        </button>
+        <button class="button-value" onclick="filterProduct('Watch')">
+            Watch
+        </button>
+    </div>
+    <div id="products"></div>
+</div>
+</div>-->
