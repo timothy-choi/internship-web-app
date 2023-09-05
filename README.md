@@ -1,7 +1,7 @@
-# EECS497 Internship Website
+# Internship Website
 
 ## Steps to host
-* This assumes that you have python3 and pip and venv and setuptools etc. installed. If not, see the "Install Python" section: [EECS485 Install Python](https://eecs485staff.github.io/p1-insta485-static/setup_virtual_env.html#install-python)
+* This assumes that you have python3 and pip and venv and setuptools etc. installed. 
 ### Clone this repository
 ```
 git clone git@github.com:andli28/eecs497-internship-website.git
